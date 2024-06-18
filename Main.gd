@@ -66,3 +66,4 @@ func _on_Loaderror_confirmed():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$LoadMain.queue_free()
+	scene.z_index = 0

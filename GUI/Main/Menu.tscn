@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://icon_black.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Roboto/Roboto-Black.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Icons/PlayIcon-Black.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Icons/MakeIcon-White.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://GUI/Main/Menu.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -28,6 +30,27 @@ bg_color = Color( 1, 0, 0, 0 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 9.0
+content_margin_right = 9.0
+content_margin_top = 9.0
+content_margin_bottom = 9.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Animation"
@@ -182,6 +205,7 @@ tracks/5/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Black" type="Node2D" parent="."]
 
@@ -230,6 +254,19 @@ custom_styles/disabled = SubResource( 2 )
 custom_styles/normal = SubResource( 2 )
 icon = ExtResource( 7 )
 expand_icon = true
+
+[node name="Dev" type="Button" parent="Black"]
+margin_left = 8.0
+margin_top = 14.0
+margin_right = 133.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "DevMenus"
 
 [node name="White" type="Node2D" parent="."]
 visible = false
@@ -281,8 +318,28 @@ custom_styles/normal = SubResource( 2 )
 icon = ExtResource( 4 )
 expand_icon = true
 
+[node name="Dev" type="Button" parent="White"]
+margin_left = 8.0
+margin_top = 14.0
+margin_right = 133.0
+margin_bottom = 49.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "DevMenus"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Animation"
 playback_speed = 0.1
 anims/Animation = SubResource( 3 )
 anims/RESET = SubResource( 4 )
+
+[connection signal="button_down" from="Black/Dev" to="." method="_on_Dev_button_down"]
