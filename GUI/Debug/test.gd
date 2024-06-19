@@ -43,3 +43,7 @@ func finished(error, result):
 		add_child(result.instance())
 
 
+
+
+func _on_Button3_button_down():
+	Networking.send_level($TextEdit.text, "HIDE-Test", "Devmenu")

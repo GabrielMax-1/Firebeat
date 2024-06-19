@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Icons/PlayIcon-Black.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 63
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="Play" type="Node2D"]
+
+[node name="BG" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="SearchBG" type="ColorRect" parent="."]
+margin_left = 56.0
+margin_top = 112.0
+margin_right = 528.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="TutorialBG" type="ColorRect" parent="."]
+margin_left = 568.0
+margin_top = 56.0
+margin_right = 1000.0
+margin_bottom = 464.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="FileBG" type="ColorRect" parent="."]
+margin_left = 904.0
+margin_top = 480.0
+margin_right = 1000.0
+margin_bottom = 568.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 95.0
+margin_right = 190.0
+margin_bottom = 111.0
+rect_scale = Vector2( -1, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+icon = ExtResource( 1 )
+expand_icon = true
+
+[node name="Search" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 528.0
+margin_bottom = 112.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Search"
+align = 1
+
+[node name="InTheServers" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 8.0
+margin_right = 528.0
+margin_bottom = 112.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "In the servers"
+align = 1
+valign = 2
+
+[node name="Tutorial" type="Label" parent="."]
+margin_left = 568.0
+margin_right = 1000.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Tutorial"
+valign = 1
+
+[node name="HowMakeLevels" type="Label" parent="."]
+margin_left = 549.0
+margin_right = 981.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "How Make Levels"
+align = 2
+valign = 1
+
+[node name="Load" type="Label" parent="."]
+margin_left = 768.0
+margin_top = 480.0
+margin_right = 904.0
+margin_bottom = 568.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Load"
+align = 1
+
+[node name="FromFiles" type="Label" parent="."]
+margin_left = 768.0
+margin_top = 499.0
+margin_right = 904.0
+margin_bottom = 571.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "From Files"
+align = 1
+valign = 1

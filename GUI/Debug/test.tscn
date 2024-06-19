@@ -47,6 +47,14 @@ resizable = true
 mode = 0
 show_hidden_files = true
 
+[node name="Button3" type="Button" parent="."]
+margin_left = 251.0
+margin_top = 488.0
+margin_right = 911.0
+margin_bottom = 524.0
+text = "Send To Servers"
+
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_Button2_button_down"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="button_down" from="Button3" to="." method="_on_Button3_button_down"]
