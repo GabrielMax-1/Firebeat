@@ -1,0 +1,199 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Icons/SearchBlack.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Play/LevelSearch.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/Roboto/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Icons/ReloadBlack.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Icons/PlayIcon-White.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="LevelSearch" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="BackgroundList" type="ColorRect" parent="."]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 896.0
+margin_bottom = 512.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 128.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Search Levels"
+align = 1
+valign = 1
+
+[node name="ButtonPageUp" type="Button" parent="."]
+visible = false
+margin_left = 201.0
+margin_top = 280.0
+margin_right = 274.0
+margin_bottom = 358.0
+rect_scale = Vector2( -1, 1 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="ButtonPageDown" type="Button" parent="."]
+visible = false
+margin_left = 821.0
+margin_top = 280.0
+margin_right = 894.0
+margin_bottom = 358.0
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="Search" type="LineEdit" parent="."]
+margin_left = 161.0
+margin_top = 152.0
+margin_right = 864.0
+margin_bottom = 208.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+placeholder_text = "Search a level here"
+placeholder_alpha = 1.0
+
+[node name="SearchButton" type="Button" parent="."]
+margin_left = 808.0
+margin_top = 152.0
+margin_right = 864.0
+margin_bottom = 207.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="ReloadButton" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 480.0
+margin_right = 120.0
+margin_bottom = 584.0
+rect_pivot_offset = Vector2( 52, 52 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 224.0
+margin_top = 230.0
+margin_right = 800.0
+margin_bottom = 272.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+text = "Name"
+
+[connection signal="text_changed" from="Search" to="." method="_on_Search_text_changed"]
+[connection signal="button_down" from="ReloadButton" to="." method="_on_ReloadButton_button_down"]

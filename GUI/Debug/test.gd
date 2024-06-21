@@ -46,4 +46,7 @@ func finished(error, result):
 
 
 func _on_Button3_button_down():
-	Networking.send_level($TextEdit.text, "HIDE-Test", "Devmenu")
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var nm = str("Test") + str(rng.randi_range(-100000, 100000))
+	Networking.send_level($TextEdit.text, nm, "Devmenu")

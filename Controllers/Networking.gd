@@ -79,7 +79,7 @@ func send_level_data(lid: String, name: String, creator: String):
 
 	# Crear un diccionario con los datos a enviar
 	var request_data = {
-		"lid": lid,
+		"lid": lid.get_basename(),
 		"name": name,
 		"creator": creator,
 		"time": str(OS.get_unix_time()),
